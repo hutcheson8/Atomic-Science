@@ -53,7 +53,7 @@ public class TESRChemBoiler extends TileEntitySpecialRenderer
                     break;
                 case WEST:
                     //Good by default
-                    break;
+                default:
             }
 
             bindTexture(((TileEntityChemBoiler) tile).processTimer > 0 ? texture_on : texture_off);

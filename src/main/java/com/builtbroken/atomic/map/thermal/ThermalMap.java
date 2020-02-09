@@ -338,7 +338,7 @@ public class ThermalMap extends MapSystem implements IThermalSystem
         }
         if (!steamSources.get(dim).contains(pos))
         {
-            steamSources.remove(pos);
+            steamSources.remove((Object) pos);
             pos.dispose();
         }
     }

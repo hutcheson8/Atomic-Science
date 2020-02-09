@@ -52,7 +52,7 @@ public class TESRChemExtractor extends TileEntitySpecialRenderer
                     break;
                 case WEST:
                     //Good by default
-                    break;
+                default:
             }
 
             bindTexture(texture);
