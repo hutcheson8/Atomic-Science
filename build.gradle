@@ -19,7 +19,7 @@ buildscript {
       //allows ability to get things from the git log.
       classpath "org.ajoberstar:grgit:2.1.0"
     }
-}
+} 
 
 plugins {
   id "com.matthewprenger.cursegradle" version "1.0.9"
