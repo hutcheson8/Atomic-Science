@@ -52,7 +52,7 @@ public class TESRChemCentrifuge extends TileEntitySpecialRenderer
                     break;
                 case WEST:
                     //GL11.glRotatef(-90, 0, 1, 0);
-                    break;
+                default:
             }
 
             bindTexture(texture);

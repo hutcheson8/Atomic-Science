@@ -76,6 +76,23 @@ public class ASRecipes extends ContentProxy
 
     private void machineRecipes()
     {
+    	//Reactor Rod Storage Conveyor
+        addRecipe(new ItemStack(ASBlocks.blockReactorRodStorageConveyor),
+                "A A",
+                "ABA",
+                "ACA",
+                'A', getOreItem("ingotSteel", Items.iron_ingot),
+                'B', ASItems.itemEmptyCell,
+                'C', Blocks.hopper);
+
+        //Fission Reactor Controller
+        addRecipe(new ItemStack(ASBlocks.blockReactorController),
+                "AB",
+                "CA",
+                'A', getOreItem("circuitAdvanced", Items.redstone),
+                'B', ASBlocks.blockReactorRodStorageConveyor,
+                'C', Blocks.piston);
+
         //Centrifuge
         addRecipe(new ItemStack(ASBlocks.blockChemCentrifuge),
                 "ICI",
@@ -119,7 +136,7 @@ public class ASRecipes extends ContentProxy
                 'M', getOreItem("motor", Items.repeater),
                 'P', getOreItem("plateIron", Blocks.iron_block),
                 'C', getOreItem("circuitAdvanced", Blocks.dispenser),
-                'C', ASItems.itemFluidCell);
+                'T', ASItems.itemFluidCell);
 
         //Turbine
         addRecipe(new ItemStack(ASBlocks.blockSteamTurbine),
@@ -241,37 +258,7 @@ public class ASRecipes extends ContentProxy
         return (Block) Block.blockRegistry.getObject(id);
     }
 
-    public static Object getOreItem(String ore_name, ItemStack alt)
-    {
-        if (OreDictionary.doesOreNameExist(ore_name))
-        {
-            for (ItemStack itemStack : OreDictionary.getOres(ore_name))
-            {
-                if (itemStack != null)
-                {
-                    return ore_name;
-                }
-            }
-        }
-        return allowAltItems && alt != null ? alt : ore_name;
-    }
-
-    public static Object getOreItem(String ore_name, Item alt)
-    {
-        if (OreDictionary.doesOreNameExist(ore_name))
-        {
-            for (ItemStack itemStack : OreDictionary.getOres(ore_name))
-            {
-                if (itemStack != null)
-                {
-                    return ore_name;
-                }
-            }
-        }
-        return allowAltItems && alt != null ? alt : ore_name;
-    }
-
-    public static Object getOreItem(String ore_name, Block alt)
+    public static Object getOreItem(String ore_name, Object alt)
     {
         if (OreDictionary.doesOreNameExist(ore_name))
         {
