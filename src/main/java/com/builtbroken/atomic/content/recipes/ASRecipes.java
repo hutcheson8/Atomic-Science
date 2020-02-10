@@ -258,37 +258,7 @@ public class ASRecipes extends ContentProxy
         return (Block) Block.blockRegistry.getObject(id);
     }
 
-    public static Object getOreItem(String ore_name, ItemStack alt)
-    {
-        if (OreDictionary.doesOreNameExist(ore_name))
-        {
-            for (ItemStack itemStack : OreDictionary.getOres(ore_name))
-            {
-                if (itemStack != null)
-                {
-                    return ore_name;
-                }
-            }
-        }
-        return allowAltItems && alt != null ? alt : ore_name;
-    }
-
-    public static Object getOreItem(String ore_name, Item alt)
-    {
-        if (OreDictionary.doesOreNameExist(ore_name))
-        {
-            for (ItemStack itemStack : OreDictionary.getOres(ore_name))
-            {
-                if (itemStack != null)
-                {
-                    return ore_name;
-                }
-            }
-        }
-        return allowAltItems && alt != null ? alt : ore_name;
-    }
-
-    public static Object getOreItem(String ore_name, Block alt)
+    public static Object getOreItem(String ore_name, Object alt)
     {
         if (OreDictionary.doesOreNameExist(ore_name))
         {
