@@ -76,6 +76,23 @@ public class ASRecipes extends ContentProxy
 
     private void machineRecipes()
     {
+    	//Reactor Rod Storage Conveyor
+        addRecipe(new ItemStack(ASBlocks.blockReactorRodStorageConveyor),
+                "A A",
+                "ABA",
+                "ACA",
+                'A', getOreItem("ingotSteel", Items.iron_ingot),
+                'B', ASItems.itemEmptyCell,
+                'C', Blocks.hopper);
+
+        //Fission Reactor Controller
+        addRecipe(new ItemStack(ASBlocks.blockReactorController),
+                "AB",
+                "CA",
+                'A', getOreItem("circuitAdvanced", Items.redstone),
+                'B', ASBlocks.blockReactorRodStorageConveyor,
+                'C', Blocks.piston);
+
         //Centrifuge
         addRecipe(new ItemStack(ASBlocks.blockChemCentrifuge),
                 "ICI",

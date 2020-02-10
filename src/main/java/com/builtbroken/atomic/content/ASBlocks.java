@@ -8,6 +8,7 @@ import com.builtbroken.atomic.content.machines.processing.centrifuge.BlockChemCe
 import com.builtbroken.atomic.content.machines.processing.centrifuge.TileEntityChemCentrifuge;
 import com.builtbroken.atomic.content.machines.processing.extractor.BlockChemExtractor;
 import com.builtbroken.atomic.content.machines.processing.extractor.TileEntityChemExtractor;
+import com.builtbroken.atomic.content.machines.reactor.fission.BlockReactorRodStorageConveyor;
 import com.builtbroken.atomic.content.machines.reactor.fission.controller.BlockReactorController;
 import com.builtbroken.atomic.content.machines.reactor.fission.controller.TileEntityReactorController;
 import com.builtbroken.atomic.content.machines.reactor.fission.core.BlockReactorCell;
@@ -31,6 +32,7 @@ public class ASBlocks extends ContentProxy
     public static Block blockRadioactiveDirt;
     public static Block blockRadioactiveGrass;
 
+    public static Block blockReactorRodStorageConveyor;
     public static Block blockReactorCell;
     public static Block blockReactorController;
     public static Block blockSteamFunnel;
@@ -52,6 +54,9 @@ public class ASBlocks extends ContentProxy
     {
         //GameRegistry.registerBlock(blockRadioactiveDirt = new BlockRadioactiveDirt(), "radioactive_dirt");
         //GameRegistry.registerBlock(blockRadioactiveGrass = new BlockRadioactiveGrass(), "radioactive_grass");
+    	
+        GameRegistry.registerBlock(blockReactorRodStorageConveyor = new BlockReactorRodStorageConveyor(), "reactor_rod_storage_conveyor");
+        
         GameRegistry.registerBlock(blockUraniumOre = new BlockUraniumOre(), "uranium_ore");
         OreDictionary.registerOre("oreUranium", blockUraniumOre);
 
