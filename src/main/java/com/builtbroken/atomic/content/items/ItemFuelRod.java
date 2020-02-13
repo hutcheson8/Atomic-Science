@@ -2,6 +2,7 @@ package com.builtbroken.atomic.content.items;
 
 import com.builtbroken.atomic.api.item.IFuelRodItem;
 import com.builtbroken.atomic.api.reactor.IReactor;
+import com.builtbroken.atomic.content.ASItems;
 import com.builtbroken.atomic.lib.LanguageUtility;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -95,7 +96,12 @@ public class ItemFuelRod extends ItemRadioactive implements IFuelRodItem
         {
             stack.setTagCompound(new NBTTagCompound());
         }
-        stack.getTagCompound().setInteger("fuelTimer", Math.max(0, fuelTick - 1));
+		int newFuelTick = Math.max(0, fuelTick - 1);
+		if(newFuelTick == 0){
+			stack = new ItemStack(ASItems.itemEmptyCell);
+		}else{
+			stack.getTagCompound().setInteger("fuelTimer", newFuelTick);
+		}
         return stack;
     }
 }
