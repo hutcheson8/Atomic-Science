@@ -101,7 +101,7 @@ public class ItemHazmat extends ItemArmor implements IAntiPoisonArmor
     {
         if (instance.getIndirectEffectType() == AtomicScienceAPI.RADIATION)
         {
-            //itemStack.damageItem(damagePerTick, entityLiving); //TODO increase damage based on value
+            itemStack.damageItem(((int) (damagePerTick * instance.getIndirectEffectPower())), entityLiving);
         }
     }
 
